@@ -1,0 +1,30 @@
+﻿<div>
+    <MudAppBar Color="Color.Primary" Fixed="false">
+        <MudText Typo="Typo.subtitle1" Class="px-2 d-sm-none d-md-flex">Teste COC</MudText>
+    </MudAppBar>
+</div>
+
+<div>
+    <MudNavMenu Class="mud-width-full">
+        <MudText Typo="Typo.h6" Class="px-4" Style="Color: white">Menu</MudText>
+        <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">Icons</MudText>
+        <MudDivider Class="my-2" />
+        <MudNavLink Href="/dashboard" Icon="@Icons.Material.Filled.Dashboard">Dashboard</MudNavLink>
+        <MudNavLink Href="/servers" Icon="@Icons.Material.Filled.Storage">Servers</MudNavLink>
+        <MudNavGroup Title="Settings" Icon="@Icons.Material.Filled.Settings" Expanded="true">
+            <MudNavLink Href="/users" Icon="@Icons.Material.Filled.People" IconColor="Color.Success">Users</MudNavLink>
+            <MudNavLink Href="/security" Icon="@Icons.Material.Filled.Security" IconColor="Color.Info">Security</MudNavLink>
+        </MudNavGroup>
+    </MudNavMenu>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
